@@ -13,3 +13,7 @@ Testing pyspark code with pytest
 ## Run marked tests with coverage
 
     docker run -it -v $(pwd):/app test_pyspark bash -c 'pytest -m "is_spark" --cov --cov-report=xml'
+
+## Build and run with compose
+
+    docker compose run --build spark bash -c 'pytest -m "not is_spark" --cov --cov-report=xml'
