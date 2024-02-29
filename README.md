@@ -16,4 +16,6 @@ Testing pyspark code with pytest
 
 ## Build and run with compose
 
-    docker compose run --build spark bash -c 'pytest -m "not is_spark" --cov --cov-report=xml'
+    docker compose run --build spark
+
+    docker-compose run --build --entrypoint="pytest -m \"not is_spark\" --cov --cov-report=xml" spark
